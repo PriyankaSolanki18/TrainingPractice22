@@ -20,11 +20,13 @@ int main() {
            }
        }
    }
+   int sum=0;
    printf("Sorted array is : ");
    for(int i=0;i<n;i++){
        printf("%d ",arr[i]);
+	   sum += arr[i];
    }
-   
+
    //finding the missing element
    int repeating_val;
    for(int i=0;i<n;i++){
@@ -32,7 +34,17 @@ int main() {
            repeating_val=arr[i];
        }
    }
-   printf("\nThe missing element is : %d\n\n",repeating_val+1);
+  
+  int natural_sum=0;
+  for(int i=1;i<=n;i++){
+  	natural_sum += i;
+	}
+
+  int result_sum = sum - repeating_val;
+
+  int missing_ele = natural_sum - result_sum; 
+  
+   printf("\nThe missing element is : %d\n\n",missing_ele);
    
    return 0;
 }
