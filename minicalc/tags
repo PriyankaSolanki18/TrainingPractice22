@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BIN	./make/makefile	/^BIN = .\/bin$/;"	m
+CC	./make/makefile	/^CC = gcc$/;"	m
+CFLAGS	./make/makefile	/^CFLAGS = -Wall -Werror -g -c$/;"	m
+IFLAGS	./make/makefile	/^IFLAGS = -I $(INC)$/;"	m
+INC	./make/makefile	/^INC = .\/include$/;"	m
+LDFLAGS	./make/makefile	/^LDFLAGS = -o$/;"	m
+OBJ	./make/makefile	/^OBJ = .\/object$/;"	m
+SRC	./make/makefile	/^SRC = .\/src$/;"	m
+main	./src/main.c	/^int main()$/;"	f
+sub	./src/function.c	/^int sub(int a, int b)$/;"	f
+sum	./src/function.c	/^int sum(int x, int y)$/;"	f
+
