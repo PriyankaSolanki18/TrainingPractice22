@@ -1,0 +1,14 @@
+write System Call
+The write system call is used to write data from a buffer to a file descriptor.
+
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t count);
+
+
+Parameters
+fd: The file descriptor where data will be written. This can be the result of an open call (e.g., a file), or it can be STDOUT_FILENO for standard output.
+
+buf: A pointer to the buffer that contains the data to be written.
+
+count: The number of bytes to write.

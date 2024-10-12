@@ -1,0 +1,8 @@
+W IFEXITED(rv):
+		 Returns true if the child exited normally.
+WEXITSTATUS(rv): 
+		Extracts the exit status from rv (only valid if WIFEXITED(rv) is true).
+WIFSIGNALED(rv): 
+		Returns true if the child process was terminated by a signal.
+WTERMSIG(rv): 
+		Extracts the signal number if the process was terminated by a signal.

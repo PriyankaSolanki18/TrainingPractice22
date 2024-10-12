@@ -1,0 +1,31 @@
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+int open(const char *pathname, int flags);
+int open(const char *pathname, int flags, mode_t mode);
+
+
+flags:
+
+O_RDONLY: Open the file for reading only.
+O_WRONLY: Open the file for writing only.
+O_RDWR: Open the file for both reading and writing.
+O_CREAT: Create the file if it does not exist. Requires a third argument mode to specify the permissions.
+O_TRUNC: Truncate the file to zero length if it already exists and is opened for writing.
+O_APPEND: Writes are appended to the end of the file.
+
+
+mode (optional):
+
+Specifies the file permissions if the file is created (i.e., if O_CREAT is used). This is specified in octal and is passed as the third argument.
+Common permission values:
+S_IRUSR: User has read permission.
+S_IWUSR: User has write permission.
+S_IRGRP: Group has read permission.
+S_IROTH: Others have read permission.
+
+
+On success: Returns a non-negative integer (the file descriptor).
+On failure: Returns -1 and sets errno to indicate the error.

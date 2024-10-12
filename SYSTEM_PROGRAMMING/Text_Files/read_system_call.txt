@@ -1,0 +1,15 @@
+#include <unistd.h>
+
+ssize_t read(int fd, void *buf, size_t count);
+
+
+Parameters:
+
+fd: The file descriptor from which to read. This can be the result of an open call (e.g., a file), or it can be STDIN_FILENO for standard input.
+buf: A pointer to a buffer where the read data will be stored.
+count: The maximum number of bytes to read.
+
+Return Value
+On success: Returns the number of bytes read. This can be less than count if fewer bytes are available (e.g., end of file is reached).
+On failure: Returns -1 and sets errno.
+
