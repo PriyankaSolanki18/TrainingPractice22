@@ -1,19 +1,34 @@
-#include <string.h>
-#include "functions.h"
-
-void encrypt(char *input, char *output) {
-    // Simple XOR encryption for demonstration
-    for (int i = 0; input[i] != '\0'; i++) {
-        output[i] = input[i] ^ 0xFF; // XOR with a key
-    }
-    output[strlen(input)] = '\0';
+// Function to perform Caesar cipher encryption
+void encryption(char *text) {
+     for (int i = 0; text[i] != '\0'; i++) {
+       // Handle uppercase letters
+       if (text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] = ((text[i] - 'A' + 3) % 26) + 'A';
+       }
+        // Handle lowercase letters
+       else if (text[i] >= 'a' && text[i] <= 'z') {
+           text[i] = ((text[i] - 'a' + 3) % 26) + 'a';
+       }
+       // Handle non-alpha characters by rotating them
+       else {
+            text[i] = ((text[i] + 3) % 256);
+       }
+      }
 }
-
-void decrypt(char *input, char *output) {
-    // Same XOR decryption
-    for (int i = 0; input[i] != '\0'; i++) {
-        output[i] = input[i] ^ 0xFF; // XOR with the same key
+// Function to perform Caesar cipher decryption
+void decryption(char *text) {
+     for (int i = 0; text[i] != '\0'; i++) {
+        // Handle uppercase letters
+       if (text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] = ((text[i] - 'A' - 3 + 26) % 26) + 'A';
+        }
+       // Handle lowercase letters
+       else if (text[i] >= 'a' && text[i] <= 'z') {
+            text[i] = ((text[i] - 'a' - 3 + 26) % 26) + 'a';
+       }
+        // Handle non-alpha characters by rotating them
+        else {
+             text[i] = ((text[i] - 3 + 256) % 256);
+         }
     }
-    output[strlen(input)] = '\0';
 }
-
